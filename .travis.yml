@@ -12,8 +12,11 @@ addons:
       - cmake
 
 before_script:
+  - gcc -v && g++ -v && cmake --version
   - mkdir build
   - cd build
   - cmake ..
 
-script: make
+script:
+  - make
+  - cppcheck --quiet --error-exitcode=1 .
