@@ -10,6 +10,7 @@ addons:
       - gcc-6
       - g++-6
       - cmake
+      - cppcheck
 
 before_script:
   - gcc -v && g++ -v && cmake --version
@@ -20,3 +21,4 @@ before_script:
 script:
   - make
   - cppcheck --quiet --error-exitcode=1 .
+  - ls .
