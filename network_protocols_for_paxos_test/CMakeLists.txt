@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.5)
+project(network_protocols_for_paxos_test VERSION 0.1 LANGUAGES CXX)
+
+add_executable(network_protocols_for_paxos_test main.cpp)
+
+target_link_libraries(network_protocols_for_paxos_test network_protocols_for_paxos_lib)

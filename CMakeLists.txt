@@ -3,15 +3,6 @@ project(pconnect VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE)
-if(DEFINED CMAKE_CONFIGURATION_TYPES AND CMAKE_VERSION VERSION_GREATER "2.8")
-    SET_PROPERTY(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS ${CMAKE_CONFIGURATION_TYPES})
-endif()
 
-include_directories(include)
-
-file(GLOB SOURCES "src/*.cpp")
-
-add_library(pconnect STATIC ${SOURCES})
-
-install(TARGETS pconnect DESTINATION "./build/${CMAKE_BUILD_TYPE}/")
+add_subdirectory(network_protocols_for_paxos_lib)
+add_subdirectory(network_protocols_for_paxos_test)
